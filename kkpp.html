@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KKPP Server</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #1a0000 url("../KKPP/BG1.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .container {
+      padding: 30px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8em;
+      color: #ff3333;
+      text-shadow: 0 0 10px #ff0000aa;
+    }
+
+    .description {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+
+    .custom-btn {
+      background: linear-gradient(145deg, #5e0101, #8a0e0e);
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+    }
+
+    .custom-btn:hover {
+      background: #fc0000;
+      color: #1a0000;
+      transform: scale(1.05);
+    }
+
+    .inner-screen {
+      margin-top: 40px;
+      background-color: #4b1616;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    }
+
+    .inner-screen h1 {
+      color: #ffffff;
+      font-size: 1.6em;
+      margin-bottom: 10px;
+    }
+
+    .inner-screen h3 {
+      color: #ff4d4d;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    .inner-screen h4{
+        color: #fae2e2;
+        margin-top: 20px;
+        font-weight: 600;
+    }
+
+    a {
+      color: #ffaaaa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .fixed-img,
+    .fixed2-img {
+      position: fixed;
+      top: 20px;
+      width: 180px;
+      z-index: 999;
+    }
+
+    .fixed-img { left: 20px; }
+    .fixed2-img { right: 20px; }
+
+    @media (max-width: 768px) {
+      .fixed-img, .fixed2-img {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">KITTIYA KITTI POYA POYI</h1>
+      <img src="/KKPP/Untitled-1_1.png" style="height: 100px;">
+    </div>
+    <div class="description">
+      <center><h2>“Kerala’s Ultimate FiveM Battleground”</h2></center> 
+      <p>Welcome to <strong>KKPP OFFICIAL PVP SERVER</strong>, is a custom FiveM server based in Kerala, India, focused on fast-paced PVP gameplay. Join intense gunfights, compete in skill-based battles, and connect with a strong local gaming community. Fair rules, active staff, and non-stop action — whether you're here to dominate or just have fun, KKPP is the place to be.</p>
+      <center>
+        <button class="custom-btn" onclick="loadContent('AU')">ABOUT US</button>
+        <button class="custom-btn" onclick="loadContent('DC')">DISCORD RULES</button>
+        <button class="custom-btn" onclick="loadContent('SR')">SERVER RULES</button>
+        <button class="custom-btn" onclick="loadContent('CC')">CONNECT</button>
+      </center>
+      <div class="inner-screen" id="innerScreen">
+        <h3>Click a rule to view it here</h3>
+        <p>Details about server rules will appear in this area.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const content = {
+      "DC": `
+      <h1>DISCORD RULES</h1>
+            <p>
+              <h3>Respectful Conduct:</h3> <h4>Treat all members with respect and refrain from engaging in any form of harassment, discrimination, or offensive behavior.
+              <br><br></h4>
+              <h3>No Spamming or Self-Promotion:</h3> <h4>Avoid spamming the chat with unnecessary messages or promoting other servers without permission.
+              <br><br></h4>
+              <h3>Follow Discord Guidelines:</h3> <h4>Adhere to Discord's Community Guidelines and Terms of Service at all times.
+              <br><br></h4>
+              <h3>Use Appropriate Channels:</h3> <h4>Post messages in their respective channels and avoid off-topic discussions in unrelated channels.
+              <br><br></h4>
+              <h3>No Advertising Cheats or Exploits:</h3> <h4>Do not discuss or promote cheating, hacking, or exploiting game mechanics.
+              <br><br></h4>
+              <h3>Listen to Staff:</h3> <h4>Follow instructions from server staff and moderators. Disputes or complaints should be addressed through appropriate channels.
+              <br><br></h4>
+              <h3>Privacy and Safety:</h3> <h4>Do not share personal information about yourself or others. Report any suspicious or unsafe behavior to the moderators.</h4>
+            </p>
+      `,
+      "SR": `
+        <h1>SERVER RULES</h1>
+              <p>
+                <h3>No Hacking or Cheating:</h3> <h4>Use of hacks, cheats, or exploits is strictly prohibited and will result in immediate bans.
+                <br><br></h4>
+                <h3>Fair Play:</h3> <h4>Play the game fairly and do not engage in any form of unfair advantage, such as glitching or exploiting bugs.
+                <br><br></h4>
+                <h3>No Griefing or Harassment:</h3> <h4>Do not engage in griefing, trolling, or harassing other players. Treat everyone with respect.
+                <br><br></h4>
+                <h3>No Spawn Camping:</h3> <h4>Avoid repeatedly targeting players immediately after they spawn to allow fair gameplay for everyone.
+                <br><br></h4>
+                <h3>No Impersonation:</h3> <h4>Do not impersonate server staff or other players.
+                <br><br></h4>
+                <h3>Use Common Sense:</h3> <h4>Use common sense and good judgment when interacting with others and playing the game. If unsure about a rule, ask a staff member for clarification.
+                <br><br></h4>
+                <h3>Avoidance of Provocation Regarding Other Servers:</h3> <h4>Players should not include or provoke any other players or groups regarding situations that occurred in other servers. Doing so will result in an immediate ban without any severe warnings.
+                <br><br></h4>
+                <h3>Respectful Naming Policy:</h3> <h4>Players are required to choose names that are respectful and free from offensive language, derogatory terms, or references to sensitive subjects such as religion, ethnicity, gender, or sexual orientation. Additionally, using the names of other players or gang names without their consent is strictly prohibited. Violation of this policy will result in immediate action, including mandatory name changes, temporary suspensions, or permanent bans.</h4>
+      `,
+      "CC": `
+        <h1>CONNECT</h1>
+        <h3>DISCORD:</h3> <a href="https://discord.gg/4qpPGj6dxa" target="_blank">Join KKPP</a><br>
+        <h3>FIVEM:</h3> <a href="fivem://connect/play.kkpp.space:30120">Connect to KKPP</a>
+      `,
+      "AU": `
+        <h1>ABOUT US</h1>
+              <p>
+                <h3>"KKPP OFFICIAL PVP SERVER" is a FiveM server based in Kerala, India, offering a unique player versus player (PVP) experience within the virtual world of Grand Theft Auto V. The server is likely tailored to cater to gamers who enjoy intense combat scenarios, where players can engage in thrilling battles against each other in various settings across the game's map.
+                <br><br></h3>
+                <h3 style="color:#ffaaaa">Given its name, it's probable that "KKPP" stands for something specific to the server's community or administration, perhaps an abbreviation for a gaming group or community. The server's focus on PVP suggests that it provides an environment where players can test their skills against each other, whether through organized events, spontaneous encounters, or structured game modes.
+                <br><br></h3>
+                <h3>Being based in Kerala, the server might have a community predominantly comprised of players from the region, fostering a sense of local camaraderie and connection among its members. This localization could also influence the server's culture, events, and possibly even in-game elements such as language preferences or cultural references.
+                <br><br></h3>
+                <h3 style="color:#ffaaaa">In terms of gameplay, the server likely offers a variety of PVP modes and activities, such as team deathmatches, capture the flag, free-for-all battles, and possibly custom game modes unique to the server. Players may also have access to a range of weapons, vehicles, and equipment to use in combat, allowing for diverse and dynamic gameplay experiences.
+                <br><br></h3>
+                <h3>Overall, "KKPP OFFICIAL PVP SERVER" seems to provide a platform for players to immerse themselves in adrenaline-pumping PVP action set in the familiar world of GTA V, with a focus on fostering a vibrant gaming community centered around competitive gameplay and shared experiences.
+                </h3>
+              </p>
+      `
+    };
+
+    function loadContent(key) {
+      document.getElementById('innerScreen').innerHTML = content[key];
+    }
+  </script>
+</body>
+</html>
