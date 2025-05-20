@@ -20,6 +20,10 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     .overlay {
@@ -135,6 +139,19 @@
         padding: 20px;
       }
     }
+
+    .watermark {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 14px;
+        color: rgba(255, 60, 60, 0.4);
+        font-family: 'Orbitron', sans-serif;
+        pointer-events: none;
+        z-index: 9999;
+        user-select: none;
+    }
+
   </style>
 </head>
 <body>
@@ -221,6 +238,7 @@
  
     <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
   </div>
+  <div class="watermark">KKPP OFFICIAL</div>
   <script language="JavaScript">
        window.onload = function () {
            document.addEventListener("contextmenu", function (e) {
